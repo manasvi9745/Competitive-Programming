@@ -5,7 +5,6 @@ using namespace std;
 int main() {
     int n;
     cin>>n;
-
     vector<ll> v(n);
     for(int i=0;i<n;i++) cin>>v[i];
 
@@ -17,7 +16,6 @@ int main() {
         curr=max(v[i],curr+v[i]);
         mx=max(mx,curr);
     }
-
     cout<<mx<<"\n";
     return 0;
 }
