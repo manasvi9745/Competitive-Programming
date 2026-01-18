@@ -121,7 +121,9 @@ Your contributions help the community grow — thank you for being part of this 
 
 Feel free to reach out to the maintainers if you have any questions or suggestions.
 <br>
-Aditi Mehta - @aditi75432
+🔹 Game Theory / Range Queries 
+<br>
+👉 Aditi Mehta - @aditi75432
 
 
 ---
@@ -129,16 +131,35 @@ Aditi Mehta - @aditi75432
 ## 🤝 Collaborators
 
 <br>
-Jaismeen - @Jaismeen777
+🔹 Greedy / Binary Search
 <br>
-Sanika- @sanikakhanduja	
+👉 Harshita - @codeX-Crafter
 <br>
-Tammana- @Tammanasehwag	
 <br>
-Harshita- @codeX-Crafter
+🔹 Recursion / Dynamic Programming
 <br>
-Shambhavi- @Shambaby	
+👉 Shambhavi - @Shambaby
 <br>
+<br>
+
+🔹 Number Theory / Prefix Sum
+<br>
+👉 Tamanna - @Tammanasehwag
+<br>
+<br>
+
+🔹 Bit Manipulation / Graphs
+<br>
+👉 Sanika - @sanikakhanduja
+<br>
+<br>
+
+🔹 Combinatorics / Sliding Window / Two Pointers
+<br>
+👉 Jaismeen - @Jaismeen777
+<br>
+<br>
+
 																	
 
 We welcome collaborators!
