@@ -1,56 +1,75 @@
+import java.io.*;
 import java.util.*;
 
-public class StrictTeacher {
+public class Main {
 
-    static long solveQuery(long n, long[] teachers, long x) {
-        int m = teachers.length;
+    public static void main(String[] args) throws Exception {
+        FastScanner fs = new FastScanner(System.in);
+        StringBuilder sb = new StringBuilder();
 
-        int idx = Arrays.binarySearch(teachers, x);
-
-        if (idx >= 0) return 0;  // Should not happen as guaranteed distinct
-
-        idx = -idx - 1; // insertion position
-
-        // No teacher on left
-        if (idx == 0) {
-            return teachers[0] - 1;
-        }
-
-        // No teacher on right
-        if (idx == m) {
-            return n - teachers[m - 1];
-        }
-
-        long leftTeacher = teachers[idx - 1];
-        long rightTeacher = teachers[idx];
-
-        return Math.min(x - leftTeacher, rightTeacher - x);
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        int t = sc.nextInt();
+        int t = fs.nextInt();
 
         while (t-- > 0) {
-
-            long n = sc.nextLong();
-            int m = sc.nextInt();
-            int q = sc.nextInt();
+            long n = fs.nextLong();
+            int m = fs.nextInt();
+            int q = fs.nextInt();
 
             long[] teachers = new long[m];
-            for (int i = 0; i < m; i++) {
-                teachers[i] = sc.nextLong();
-            }
+            for (int i = 0; i < m; i++)
+                teachers[i] = fs.nextLong();
 
             Arrays.sort(teachers);
 
-            for (int i = 0; i < q; i++) {
-                long x = sc.nextLong();
-                System.out.println(solveQuery(n, teachers, x));
+            while (q-- > 0) {
+                long david = fs.nextLong();
+
+                int pos = Arrays.binarySearch(teachers, david);
+
+                if (pos >= 0) {
+                    sb.append(0).append("\n");
+                    continue;
+                }
+
+                pos = -pos - 1;
+
+                if (pos == 0) {
+                    // left of all teachers
+                    sb.append(teachers[0] - 1).append("\n");
+                } else if (pos == m) {
+                    // right of all teachers
+                    sb.append(n - teachers[m - 1]).append("\n");
+                } else {
+                    long left = teachers[pos - 1];
+                    long right = teachers[pos];
+                    sb.append((right - left) / 2).append("\n");
+                }
             }
         }
 
-        sc.close();
+        System.out.print(sb);
+    }
+
+    // Fast I/O
+    static class FastScanner {
+        BufferedReader br;
+        StringTokenizer st;
+
+        FastScanner(InputStream is) {
+            br = new BufferedReader(new InputStreamReader(is));
+        }
+
+        String next() throws IOException {
+            while (st == null || !st.hasMoreElements())
+                st = new StringTokenizer(br.readLine());
+            return st.nextToken();
+        }
+
+        int nextInt() throws IOException {
+            return Integer.parseInt(next());
+        }
+
+        long nextLong() throws IOException {
+            return Long.parseLong(next());
+        }
     }
 }
