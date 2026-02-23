@@ -1,9 +1,8 @@
-def totalHammingDistance(nums):
-    total = 0
+def total_hamming_distance(nums):
     n = len(nums)
-    
-    # Check all 32 bit positions
-    for bit in range(32):
+    total = 0
+
+    for bit in range(32):  # up to 32 bits
         ones = 0
         
         for num in nums:
@@ -12,9 +11,9 @@ def totalHammingDistance(nums):
         
         zeros = n - ones
         total += ones * zeros
-    
+
     return total
 
 
 # Example
-print(totalHammingDistance([4, 14, 2]))
+print(total_hamming_distance([4, 14, 2]))  # Output: 6
